@@ -1,8 +1,11 @@
 package dam.pmdm.spyrothedragon;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -13,19 +16,23 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
 import dam.pmdm.spyrothedragon.databinding.ActivityMainBinding;
+import dam.pmdm.spyrothedragon.ui.Utils.Utils;
+import dam.pmdm.spyrothedragon.ui.Guia.PantallaInicioGuia;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private SharedPreferences sharedPreferences;
     NavController navController = null;
+    private PantallaInicioGuia bindingPantalla2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
 
+        setContentView(binding.getRoot());
         Fragment navHostFragment = getSupportFragmentManager().findFragmentById(R.id.navHostFragment);
         if (navHostFragment != null) {
             navController = NavHostFragment.findNavController(navHostFragment);
@@ -41,20 +48,32 @@ public class MainActivity extends AppCompatActivity {
                     destination.getId() == R.id.navigation_collectibles) {
                 // Para las pantallas de los tabs, no queremos que aparezca la flecha de atrás
                 getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-            }
-            else {
+            } else {
                 // Si se navega a una pantalla donde se desea mostrar la flecha de atrás, habilítala
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             }
         });
 
+        /*por defecto, dejo el layout sobre el que se inicia la guia invisible*/
+        FrameLayout guia = findViewById(R.id.guideFrameLayout);
+        guia.setVisibility(View.INVISIBLE);
+
+        /*para realizar pruebas con sharedPreferences*/
+        /*Utils.guardarGuia(this, false);
+
+        /*se inicia la guia si no se ha hecho antes*/
+        if (!Utils.obtenerGuia(this)) {
+            guia.setVisibility(View.VISIBLE);
+            getSupportFragmentManager().beginTransaction().replace(R.id.guideFrameLayout, new PantallaInicioGuia()).commit();
+        }
+
     }
+
 
     private boolean selectedBottomMenu(@NonNull MenuItem menuItem) {
         if (menuItem.getItemId() == R.id.nav_characters)
             navController.navigate(R.id.navigation_characters);
-        else
-        if (menuItem.getItemId() == R.id.nav_worlds)
+        else if (menuItem.getItemId() == R.id.nav_worlds)
             navController.navigate(R.id.navigation_worlds);
         else
             navController.navigate(R.id.navigation_collectibles);
@@ -82,12 +101,11 @@ public class MainActivity extends AppCompatActivity {
     private void showInfoDialog() {
         // Crear un diálogo de información
         new AlertDialog.Builder(this)
+                .setPositiveButton(R.string.accept, null)
                 .setTitle(R.string.title_about)
                 .setMessage(R.string.text_about)
-                .setPositiveButton(R.string.accept, null)
                 .show();
     }
-
 
 
 }

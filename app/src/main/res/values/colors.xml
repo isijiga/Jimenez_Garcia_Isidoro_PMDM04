@@ -7,4 +7,11 @@
     <color name="yellow2">#88ffffff</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="purple_transparent">#509C27B0</color>
+    <color name="yellow_transparente">#50fbdf6a</color>
+    <color name="amarillo_complement">#C7AC5E</color>
+    <color name="amarillo_spyro">#fbdf6a</color>
+    <color name="amarillo_spyro2">#e7a56e</color>
+    <color name="naranja_spyro">#d28077</color>
+    <color name="transparente">#00000000</color>
 </resources>

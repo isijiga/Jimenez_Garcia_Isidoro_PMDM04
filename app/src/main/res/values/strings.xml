@@ -4,6 +4,12 @@
     <string name="characters">Personajes</string>
     <string name="collectibles">Coleccionables</string>
     <string name="title_about">Acerca de</string>
-    <string name="text_about">Aplicación desarrollada por \n <b>Lindsay Barrero Martínez.</b></string>
+    <string name="text_about">Aplicación desarrollada por \n <b>Isidoro Jiménez García.</b></string>
     <string name="accept">Aceptar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pantalla1">Aquí podrás explorar a todos\n los <b>personajes</b>\n del mundo de Spyro</string>
+    <string name="pantalla2">Aquí podrás explorar todos\n <b>los mundos</b>\n</string>
+    <string name="pantalla3">Aquí podrás explorar todos\n los <u>objetos</u>\n colleccionables\n</string>
+    <string name="acercade">Acerca de..</string>
 </resources>

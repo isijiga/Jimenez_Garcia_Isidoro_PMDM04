@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pantalla2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_transparent"
+    android:clickable="true"
+    android:focusable="true"
+
+    >
+
+    <TextView
+        android:id="@+id/texto_principal"
+        style="@style/bocadillos"
+        android:text="@string/pantalla1"
+        ></TextView>
+
+
+    <ImageView
+     android:id="@+id/selector"
+     android:layout_width="110dp"
+     android:layout_height="110dp"
+     android:src="@drawable/selector"
+     android:layout_gravity="bottom"
+     android:layout_marginBottom="-20dp"
+     ></ImageView>
+
+    <Button
+        android:id="@+id/salir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        style="@style/SkipButton"
+        android:text="Skip"></Button>
+
+</FrameLayout>

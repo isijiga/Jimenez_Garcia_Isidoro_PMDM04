@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_transparent"
+    android:clickable="true"
+    android:focusable="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/background"
+            android:layout_width="800dp"
+            android:layout_height="1100dp"
+            android:alpha="0.85"
+            android:src="@drawable/line_shape"
+            app:layout_constraintBottom_toTopOf="@+id/comenzar_guia"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/amarillo_spyro"></ImageView>
+
+
+        <TextView
+            android:id="@+id/texto_principal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minLines="2"
+            android:text="BIENVENIDO A LA GUIA DE SPYRO THE DRAGON"
+            android:textAlignment="center"
+            android:textSize="28dp"
+            android:textStyle="bold"
+            android:textColor="@color/purple"
+            android:background="@color/amarillo_spyro"
+            app:layout_constraintBottom_toBottomOf="@+id/background"
+            app:layout_constraintEnd_toEndOf="@+id/background"
+            app:layout_constraintStart_toStartOf="@+id/background"
+            app:layout_constraintTop_toBottomOf="@id/imagen_spyro"></TextView>
+
+
+        <TextView
+            android:id="@+id/comenzar_guia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/amarillo_spyro"
+            android:text="COMENZAR GUIA"
+            android:textColor="@color/purple"
+            android:textSize="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonInicio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+        </TextView>
+
+        <ImageView
+            android:id="@+id/imagen_spyro"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            android:layout_marginBottom="32dp"
+            android:src="@drawable/spyro"
+            app:layout_constraintBottom_toTopOf="@+id/texto_principal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            ></ImageView>
+
+        <ImageButton
+            android:id="@+id/buttonInicio"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/ico_start"
+            android:backgroundTint="@color/purple"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></ImageButton>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

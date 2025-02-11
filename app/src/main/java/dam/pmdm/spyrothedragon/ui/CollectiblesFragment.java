@@ -1,11 +1,17 @@
 package dam.pmdm.spyrothedragon.ui;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,11 +42,15 @@ public class CollectiblesFragment extends Fragment {
         recyclerView = binding.recyclerViewCollectibles;
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         collectiblesList = new ArrayList<>();
-        adapter = new CollectiblesAdapter(collectiblesList);
+        View fragmentView = binding.getRoot();
+        adapter = new CollectiblesAdapter(collectiblesList, fragmentView);
         recyclerView.setAdapter(adapter);
+
 
         loadCollectibles();
         return binding.getRoot();
+
+
     }
 
     @Override
@@ -99,4 +109,5 @@ public class CollectiblesFragment extends Fragment {
             e.printStackTrace();
         }
     }
+
 }
