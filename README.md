@@ -20,3 +20,5 @@ Me gustaria haber podido dedicar más tiempo al desarrollo de la tarea, pero por
 		
 ## Capturas de pantalla:
 	
+![imagen](https://github.com/user-attachments/assets/47ddaa9c-fa30-40bd-8b0e-dcbaa4e155e3)
+![imagen](https://github.com/user-attachments/assets/f258e2d3-add3-45b2-b22e-93236b813fac)
