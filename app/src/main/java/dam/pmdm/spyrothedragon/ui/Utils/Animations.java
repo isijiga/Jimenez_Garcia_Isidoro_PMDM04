@@ -37,16 +37,19 @@ public class Animations {
     public static void animaImage(View view) {
 
         AnimatorSet animatorSet = new AnimatorSet();
-        float rdn = (float) (Math.random() * -45);
-        ObjectAnimator animarScalaX = ObjectAnimator.ofFloat(view, "scaleY", 2.5f);
-        ObjectAnimator rotate = ObjectAnimator.ofFloat(view, "rotation", rdn);
+        float rdn = (float) (Math.random() * 45);
+        ObjectAnimator animarScalaX = ObjectAnimator.ofFloat(view, "scaleY", 1f,1.5f);
+        ObjectAnimator rotate = ObjectAnimator.ofFloat(view, "rotationX", rdn);
+        ObjectAnimator alpha = ObjectAnimator.ofFloat(view, "alpha", 0f,1.0f);
 
         animarScalaX.setRepeatCount(16);
         animarScalaX.setRepeatMode(ValueAnimator.RESTART);
         rotate.setRepeatCount(16);
+        alpha.setRepeatCount(16);
         rotate.setRepeatMode(ValueAnimator.RESTART);
+        alpha.setRepeatMode(ValueAnimator.RESTART);
 
-        animatorSet.playTogether(animarScalaX, rotate);
+        animatorSet.playTogether(animarScalaX, rotate, alpha);
         animatorSet.setDuration(700);
         animatorSet.start();
 

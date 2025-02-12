@@ -31,7 +31,7 @@ public class EasterEggAnim extends View {
     protected void onDraw(@NonNull Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.drawBitmap(bitmap, 120, 150, paint);
+        canvas.drawBitmap(bitmap, 0, 0, paint);
 
 
     }
