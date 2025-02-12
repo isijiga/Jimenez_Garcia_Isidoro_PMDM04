@@ -51,7 +51,6 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Ch
                         easterEggAnim.setY(150);
                         easterEggAnim.setRotation(4.5f);
                         Animations.animaImage(easterEggAnim);
-
                         view.addView(easterEggAnim);
 
                     }

@@ -25,7 +25,7 @@
         android:src="@drawable/selector_flecha"
         app:tint="@color/amarillo_spyro"
         android:layout_gravity="right"
-        android:layout_marginTop="-15dp"
+        android:layout_marginTop="15dp"
         ></ImageView>
 
     <Button

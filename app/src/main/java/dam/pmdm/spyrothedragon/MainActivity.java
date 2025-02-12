@@ -10,6 +10,7 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     NavController navController = null;
     private PantallaInicioGuia bindingPantalla2;
-
+    Toolbar toolbar=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         setContentView(binding.getRoot());
+        /*implementacion de Toolbar para tapar la actionbar*/
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         Fragment navHostFragment = getSupportFragmentManager().findFragmentById(R.id.navHostFragment);
         if (navHostFragment != null) {
             navController = NavHostFragment.findNavController(navHostFragment);
